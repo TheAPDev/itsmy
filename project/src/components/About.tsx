@@ -35,8 +35,12 @@ export default function About() {
           </a>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-          <div className={`space-y-6 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+        {/* Scroll hint for mobile users */}
+        <div className="block md:hidden text-center text-sm text-gray-400 mb-2 animate-pulse">
+          <span>Scroll horizontally to view more</span>
+        </div>
+        <div className="flex flex-row gap-6 items-start max-w-6xl mx-auto overflow-x-auto flex-nowrap pb-6 md:grid md:grid-cols-2 md:overflow-x-visible md:gap-12">
+          <div className={`min-w-[320px] max-w-xs flex-shrink-0 transition-all duration-1000 delay-200 md:min-w-0 md:max-w-full md:flex-shrink md:col-span-1`}>
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8 hover:border-blue-500/50 transition-all duration-300 group">
               <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent mb-6"></div>
               <p className="text-gray-300 leading-relaxed text-lg">
@@ -48,10 +52,8 @@ export default function About() {
                 Passionate about building intelligent systems, solving real-world problems, and creating high-impact AI solutions.
               </p>
             </div>
-
           </div>
-
-          <div className={`space-y-6 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+          <div className={`flex flex-col gap-6 min-w-[320px] max-w-xs flex-shrink-0 transition-all duration-1000 delay-400 md:min-w-0 md:max-w-full md:flex-shrink md:col-span-1`}>
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8 hover:border-blue-500/50 transition-all duration-300 group">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
@@ -67,7 +69,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8 hover:border-blue-500/50 transition-all duration-300 group">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
@@ -84,7 +85,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8 hover:border-blue-500/50 transition-all duration-300 group">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">

@@ -68,30 +68,32 @@ export default function Interests() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
           {interests.map((interest, idx) => (
             <div
               key={interest.title}
               className={`transition-all duration-1000 ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-              }`}
+              } min-w-[180px]`}
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
-              <div className="group relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-lg p-8 h-full hover:border-blue-500/50 transition-all duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-2 overflow-hidden">
+              <div className="group relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-lg p-6 sm:p-8 h-full hover:border-blue-500/50 transition-all duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-2 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                <div className="relative text-center">
+                <div className="relative text-center break-words">
                   <div className="mb-6 flex justify-center">
                     <div className="p-4 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-full group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                       <interest.icon className="w-10 h-10 text-blue-400" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                    {interest.title}
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors break-words">
+                    {interest.title === 'Entrepreneurship' ? (
+                      <span>Entrepreneur<span className="hyphen">-</span>ship</span>
+                    ) : interest.title}
                   </h3>
 
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed break-words">
                     {interest.description}
                   </p>
                 </div>

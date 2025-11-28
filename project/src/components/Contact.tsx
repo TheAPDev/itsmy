@@ -68,7 +68,7 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {contactInfo.map((info) => (
-                  <div key={info.label} className="group">
+                  <div key={info.label} className="group min-w-0">
                     {info.href ? (
                       <a
                         href={info.href}
@@ -79,7 +79,7 @@ export default function Contact() {
                         <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
                           <info.icon className="w-5 h-5 text-blue-400" />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <p className="text-gray-500 text-sm mb-1">{info.label}</p>
                           <p className="text-white group-hover:text-blue-400 transition-colors break-all text-sm">
                             {info.value}
@@ -91,7 +91,7 @@ export default function Contact() {
                         <div className="p-2 bg-blue-500/10 rounded-lg">
                           <info.icon className="w-5 h-5 text-blue-400" />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <p className="text-gray-500 text-sm mb-1">{info.label}</p>
                           <p className="text-white text-sm">{info.value}</p>
                         </div>
