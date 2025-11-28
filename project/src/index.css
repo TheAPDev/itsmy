@@ -1,0 +1,61 @@
+.projects-slider {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 32rem; /* 2 cards at 16rem each */
+  max-width: 100%;
+}
+/* Projects slider styles */
+.projects-slider {
+  transition: transform 0.7s;
+  display: flex;
+  gap: 1.5rem; /* Tailwind gap-6 */
+}
+.projects-slider-inner {
+  display: flex;
+  gap: 1.5rem;
+  width: 1100%; /* Will be overridden by inline style for dynamic width */
+}
+.projects-slide {
+  min-width: 0;
+  width: 16rem;
+  transition: opacity 1s, transform 1s;
+  display: flex;
+  align-items: stretch;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
